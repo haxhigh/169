@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+        <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+        <link href="style.css"/>
+        <script src="./js/addButtons.js"></script>
+
+    </head>
+    <body>
+        <a-scene background="color: #FAFAFA" embedded vr-mode-ui:"enabled:false" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;debugUIEnabled: false;"
+        gesture-detector>
+        <a-camera camera=""></a-camera>
+
+        <a-assets>
+            <a-asset-item id="toy" src=""></a-asset-item>
+        </a-assets>
+
+        <a-marker id="toy-marker" type="pattern" url="" cursor="rayorginin:mouse">
+            <a-entity id="toy-marker" gltf-model="#toy"  ></a-entity>
+            <a-plane position="0 0 0" height="1" rotation="-90 0 0" width="1">
+                <a-plane position="0 0.89 0.02" width="1.49" height="0.3" rotation="0 0 0" color="#F0C30F" >
+                    <a-entity position="0 0 0.1" rotation="0 0 0" text="value:PIZZA MARGHERTIA;color:black;width:1.8;height:1;align:center"></a-entity>
+                </a-plane>
+              </a-plane>
+              <a-entity position="0 0 0.1" text="color:black;align:center;width:2;value:toy"></a-entity>
+        </a-marker>
+        </a-scene>
+        <div id="button"></div>
+    </body>
+</html>
